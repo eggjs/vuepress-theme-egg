@@ -1,13 +1,15 @@
 {
   "name": "@eggjs/vuepress-theme-egg",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "VuePress theme for Egg.js",
   "main": "index.js",
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "contributors:add": "all-contributors add",
+    "contributors:generate": "all-contributors generate"
   },
   "repository": {
     "type": "git",
@@ -27,5 +29,8 @@
     "@vuepress/plugin-back-to-top": "next",
     "@vuepress/plugin-medium-zoom": "next",
     "urllib": "^2.33.3"
+  },
+  "devDependencies": {
+    "all-contributors-cli": "^6.4.0"
   }
 }
