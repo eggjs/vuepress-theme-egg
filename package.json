@@ -1,0 +1,31 @@
+{
+  "name": "@eggjs/vuepress-theme-egg",
+  "version": "1.0.0",
+  "description": "VuePress theme for Egg.js",
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thonatos/vuepress-theme-egg.git"
+  },
+  "keywords": [
+    "Egg.js",
+    "Egg"
+  ],
+  "author": "Suyi Thonatos Yang <thonatos.yang@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thonatos/vuepress-theme-egg/issues"
+  },
+  "homepage": "https://github.com/thonatos/vuepress-theme-egg#readme",
+  "dependencies": {
+    "@vuepress/plugin-back-to-top": "next",
+    "@vuepress/plugin-medium-zoom": "next",
+    "urllib": "^2.33.3"
+  }
+}
