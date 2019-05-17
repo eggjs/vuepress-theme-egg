@@ -15,16 +15,8 @@
 
 <script>
   import Sticker from './Sticker.vue';
+  import { getAbsoluteTop } from '../util';
   let initTop;
-
-  // get offset top
-  function getAbsoluteTop(dom) {
-    return dom && dom.getBoundingClientRect
-      ? dom.getBoundingClientRect().top +
-      document.body.scrollTop +
-      document.documentElement.scrollTop
-      : 0;
-  }
 
   export default {
     components: {
@@ -61,10 +53,6 @@
           this.$el.scrollTop += rect.top - (wrapperRect.height - rect.height);
         }
       },
-
-      $route() {
-
-      }
     },
 
     methods: {
@@ -94,11 +82,6 @@
           }
         }
       },
-
-      triggerEvt() {
-        this._onScroll();
-        this._onHashChange();
-      }
     },
 
     mounted() {
@@ -110,23 +93,13 @@
       this.$watch('visible', syncVisible);
 
       // binding event
-      setTimeout(() => this.triggerEvt(), 1000);
-
+      setTimeout(() => this._onScroll(), 1000);
       this._onScroll = () => this.onScroll();
-      this._onHashChange = () => {
-        const hash = decodeURIComponent(location.hash.substring(1));
-        const index = (this.$page.headers || []).findIndex(h => h.slug === hash);
-        if (index >= 0) this.activeIndex = index;
-        const dom = hash && document.getElementById(hash);
-        if (dom) window.scrollTo(0, getAbsoluteTop(dom) - 20);
-      };
       window.addEventListener("scroll", this._onScroll);
-      // window.addEventListener('hashchange', this._onHashChange);
     },
 
     beforeDestroy() {
       window.removeEventListener("scroll", this._onScroll);
-      window.removeEventListener("hashchange", this._onHashChange);
     }
   };
 </script>

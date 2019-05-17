@@ -34,12 +34,14 @@ module.exports = () => {
         },
       });
     },
-
     plugins: [
       ['@vuepress/active-header-links'],
       ['@vuepress/plugin-nprogress'],
       [require('./plugins/extract')],
       [require('./plugins/plantuml')],
+      [ 'container', { type: 'tip', defaultTitle: { '/zh/': '提示' } }],
+      [ 'container', { type: 'warning', defaultTitle: { '/zh/': '注意' } }],
+      [ 'container', { type: 'danger', defaultTitle: { '/zh/': '警告' } }],
     ],
   };
 };
