@@ -49,6 +49,14 @@ export function isTel(path) {
   return /^tel:/.test(path);
 }
 
+export function getAbsoluteTop(dom) {
+  return dom && dom.getBoundingClientRect
+    ? dom.getBoundingClientRect().top +
+    document.body.scrollTop +
+    document.documentElement.scrollTop
+    : 0;
+}
+
 export function ensureExt(path) {
   if (isExternal(path)) {
     return path;
@@ -234,7 +242,7 @@ export function groupHeaders(headers) {
 /**
  * @param { Route } route
  * @param { Array<string|string[]> | Array<SidebarGroup> | [link: string]: SidebarConfig } config
- * @returns { base: string, config: SidebarConfig }
+ * @return { base: string, config: SidebarConfig }
  */
 export function resolveMatchingConfig(regularPath, config) {
   if (Array.isArray(config)) {

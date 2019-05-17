@@ -10,12 +10,12 @@
           :src="$withBase($site.themeConfig.logo)"
           :alt="$siteTitle"
         >
-        <!-- <span
+        <span
           ref="siteName"
           class="site-name"
           v-if="$siteTitle"
           :class="{ 'can-hide': $site.themeConfig.logo }"
-        >{{ $siteTitle }}</span> -->
+        >{{ $siteTitle }}</span>
       </router-link>
 
       <SearchBox :placeholder="searchTitle" v-if="$site.themeConfig.search !== false"/>
@@ -132,7 +132,7 @@ $navbar-horizontal-padding = 1.5rem;
       border-right: 1px solid #ebebeb;
     }
 
-    .search-box {
+    .egg-search-box {
       position: absolute;
       vertical-align: top;
       top: 0;
@@ -162,8 +162,7 @@ $navbar-horizontal-padding = 1.5rem;
   }
 
   .logo {
-    /* height: $navbarHeight - 1.4rem; */
-    height: 100%;
+    height: $navbarHeight - 1.4rem;
     min-width: $navbarHeight - 1.4rem;
     margin-right: 0.8rem;
     vertical-align: top;
@@ -223,7 +222,7 @@ $navbar-horizontal-padding = 1.5rem;
         padding-right: 1rem;
       }
 
-      .search-box {
+      .egg-search-box {
         margin-left: 0.5rem;
       }
     }
@@ -243,7 +242,7 @@ $navbar-horizontal-padding = 1.5rem;
         border-right: none;
       }
 
-      .search-box {
+      .egg-search-box {
         right: 0;
         left: auto;
 

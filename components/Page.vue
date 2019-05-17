@@ -44,7 +44,7 @@
 </template>
 
 <script>
-  import { resolvePage, normalize, outboundRE, endingSlashRE } from "../util";
+  import { resolvePage, normalize, outboundRE, getAbsoluteTop, endingSlashRE } from "../util";
 
   export default {
     props: ["sidebarItems"],
@@ -144,7 +144,26 @@
           (docsDir ? "/" + docsDir.replace(endingSlashRE, "") : "") +
           path
         );
+      },
+
+      autoJumpHash() {
+        setTimeout(() => {
+          const hash = decodeURIComponent(location.hash.substring(1));
+          const dom = hash && document.getElementById(hash);
+          if (dom) window.scrollTo(0, getAbsoluteTop(dom) - 5);
+        }, 100);
       }
+    },
+
+    watch: {
+      $route(newRoute, oldRoute) {
+        if (newRoute.path === oldRoute.path) return;
+        this.autoJumpHash();
+      }
+    },
+
+    mounted() {
+      this.autoJumpHash();
     }
   };
 
