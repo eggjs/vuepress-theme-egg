@@ -4,8 +4,8 @@ workflow "Pull Request" {
 }
 
 action "Release" {
-  uses = "thonatos/github-actions-release"
-  args = "release"
+  uses = "thonatos/github-actions-release@master"
+  args = "actions-release"
   secrets = [
     "GITHUB_TOKEN",
     "NPM_AUTH_TOKEN",
