@@ -3,8 +3,6 @@ const container = require('markdown-it-container');
 // Theme API.
 module.exports = () => {
   return {
-    extend: '@vuepress/theme-default',
-
     extendMarkdown: md => {
       md.set({
         linkify: true
