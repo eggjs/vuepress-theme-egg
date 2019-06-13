@@ -1,6 +1,6 @@
 {
   "name": "@eggjs/vuepress-theme-egg",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "VuePress theme for Egg.js",
   "main": "index.js",
   "publishConfig": {

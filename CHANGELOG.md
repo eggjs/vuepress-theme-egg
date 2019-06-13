@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.6](https://github.com/thonatos/vuepress-theme-egg/compare/v0.1.5...v0.1.6) (2019-06-13)
+
+
+### Bug Fixes
+
+* wrong push ([#4](https://github.com/thonatos/vuepress-theme-egg/issues/4)) ([1fc3253](https://github.com/thonatos/vuepress-theme-egg/commit/1fc3253))
+
+
+
 ### [0.1.5](https://github.com/thonatos/vuepress-theme-egg/compare/v0.1.4...v0.1.5) (2019-06-13)
 
 

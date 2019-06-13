@@ -50,7 +50,7 @@ export default {
 
   computed: {
     showSuggestions() {
-      return this.suggestions && this.suggestions.length;
+      return this.focused && this.suggestions && this.suggestions.length;
     },
 
     suggestions() {
