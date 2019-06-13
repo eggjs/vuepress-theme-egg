@@ -17,7 +17,7 @@
 
 ### Suggestions
 
-Please open an issue [here](https://github.com/eggjs/vuepress-theme-egg/issues).
+Please open an issue [here](https://github.com/eggjs/egg/issues).
 
 ### License
 
