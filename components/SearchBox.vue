@@ -50,7 +50,7 @@ export default {
 
   computed: {
     showSuggestions() {
-      return this.focused && this.suggestions && this.suggestions.length;
+      return this.suggestions && this.suggestions.length;
     },
 
     suggestions() {
@@ -149,7 +149,7 @@ export default {
 
     // make suggestions align right when there are not enough items
     alignRight() {
-      const navCount = (this.$site.themeConfig.nav || []).length;
+      const navCount = (this.$themeLocaleConfig.nav || []).length;
       const repo = this.$site.repo ? 1 : 0;
       return navCount + repo <= 2;
     }
