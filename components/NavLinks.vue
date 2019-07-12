@@ -7,10 +7,12 @@
     </div>
 
     <!-- repo link -->
-    <a v-if="repoLink" :href="repoLink" class="repo-link" target="_blank" rel="noopener noreferrer">
-      {{ repoLabel }}
-      <OutboundLink/>
-    </a>
+    <div class="nav-item">
+      <a v-if="repoLink" :href="repoLink" class="repo-link" target="_blank" rel="noopener noreferrer">
+        {{ repoLabel }}
+        <OutboundLink/>
+      </a>
+    </div>
   </nav>
 </template>
 
@@ -41,7 +43,7 @@ export default {
         const languageDropdown = {
           text: this.$themeLocaleConfig.selectText || "Languages",
           type: "links",
-          addr: "langs",          
+          addr: "langs",
           items: Object.keys(locales).map(path => {
             const locale = locales[path];
             const text =
