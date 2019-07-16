@@ -1,17 +1,24 @@
-workflow "Pull Request" {
-  on = "pull_request"
-  resolves = ["Release"]
+workflow "Push" {
+  on = "push"
+  resolves = ["Deployment"]
 }
 
-action "Release" {
-  uses = "thonatos/github-actions-release@master"
-  args = "actions-release"
-  secrets = [
-    "GITHUB_TOKEN",
-    "NPM_AUTH_TOKEN",
-    "RELEASE_SSH_ID_RSA",
-    "RELEASE_SSH_ID_RSA_PUB",
-    "RELEASE_GIT_USER_NAME",
-    "RELEASE_GIT_USER_EMAIL",
-  ]
+action "Installation" {
+  needs = "Filters for GitHub Actions"
+  uses = "thonatos/github-actions-nodejs@v0.1.1"
+  args = "npm install npminstall -g && npminstall"
+}
+
+action "Deployment" {
+  needs = "Installation"
+  uses = "thonatos/github-actions-nodejs@v0.1.1"
+  args = "npm run semantic-release"
+  secrets = ["GITHUB_TOKEN", "NPM_TOKEN"]
+}
+
+# Filter for master branch
+action "Filters for GitHub Actions" {
+  uses = "actions/bin/filter@3c0b4f0e63ea54ea5df2914b4fabf383368cd0da"
+  secrets = ["GITHUB_TOKEN"]
+  args = "branch master"
 }
