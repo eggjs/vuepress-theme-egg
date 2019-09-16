@@ -37,11 +37,10 @@
   },
   "release": {
     "branche": "master",
+    "repositoryUrl": "git@github.com:eggjs/vuepress-theme-egg.git",
     "plugins": [
       "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
-      "@semantic-release/npm",
-      "@semantic-release/github"
+      "@eggjs/semantic-release-changelog"
     ]
   }
 }
