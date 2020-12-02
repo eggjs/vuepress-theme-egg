@@ -27,8 +27,8 @@
   },
   "homepage": "https://github.com/thonatos/vuepress-theme-egg#readme",
   "dependencies": {
-    "@vuepress/plugin-back-to-top": "next",
-    "@vuepress/plugin-medium-zoom": "next",
+    "@vuepress/plugin-back-to-top": "^1.7.1",
+    "@vuepress/plugin-medium-zoom": "^1.7.1",
     "urllib": "^2.33.3"
   },
   "devDependencies": {
