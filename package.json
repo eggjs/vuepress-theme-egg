@@ -12,10 +12,7 @@
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/thonatos/vuepress-theme-egg.git"
-  },
+  "repositoryUrl":"git@github.com:eggjs/vuepress-theme-egg.git",
   "keywords": [
     "Egg.js",
     "Egg"
