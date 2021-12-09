@@ -17,9 +17,10 @@
           :class="{ 'can-hide': $site.themeConfig.logo }"
         >{{ $siteTitle }}</span>
       </router-link>
-
-      <SearchBox :placeholder="searchTitle" v-if="$site.themeConfig.search !== false"/>
+     
     </div>
+
+    <SearchBox v-if="$site.themeConfig.search !== false"/>
 
     <div class="links" :style="linksWrapMaxWidth ? { 'max-width': linksWrapMaxWidth + 'px' } : {}">
       <NavLinks class="can-hide"/>
@@ -29,7 +30,7 @@
 
 <script>
 import SidebarButton from "./SidebarButton.vue";
-import SearchBox from "./SearchBox.vue";
+import SearchBox from '@SearchBox'
 import NavLinks from "./NavLinks.vue";
 
 export default {
@@ -103,7 +104,6 @@ $navbar-horizontal-padding = 1.5rem;
   background-color: #fff;
   box-sizing: border-box;
   box-shadow: 0 0.13rem 1.5rem 0 rgba(0, 0, 0, 0.08);
-
   .left-logo-part {
     position: absolute;
     width: $sidebarWidth;
@@ -131,29 +131,24 @@ $navbar-horizontal-padding = 1.5rem;
       padding: 0 2.5rem;
       border-right: 1px solid #ebebeb;
     }
+  }
 
-    .egg-search-box {
-      position: absolute;
-      vertical-align: top;
-      top: 0;
-      left: 100%;
-      bottom: 0;
-      margin: auto;
-      margin-left: 2.5rem;
+  .search-box {
+    display: flex;
+    position: absolute;
+    box-sizing: border-box;
+    top: 0;
+    left: 20em;
+    bottom: 0;
+    z-index: 100;
 
-      .suggestions {
-        top: $navbarHeight;
-        padding-top: 0;
-        margin: 0;
-        text-align: left;
-      }
+    input {
+      margin-top: 15px;
+    }
 
-      input {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-      }
+    .suggestions {
+      left: 0px;
+      margin-top: 20px;
     }
   }
 
@@ -212,6 +207,10 @@ $navbar-horizontal-padding = 1.5rem;
     .links {
       right: $navbar-horizontal-padding;
     }
+
+    .search-box {
+      left: 10em;
+    }
   }
 }
 
@@ -221,10 +220,6 @@ $navbar-horizontal-padding = 1.5rem;
       & > a {
         padding-right: 1rem;
       }
-
-      .egg-search-box {
-        margin-left: 0.5rem;
-      }
     }
   }
 }
@@ -233,6 +228,25 @@ $navbar-horizontal-padding = 1.5rem;
   .navbar {
     padding-left: 4rem;
 
+    .search-box {
+      right: 0;
+      left: auto;
+
+      input {
+        left: auto;
+        right: 0;
+
+        &:focus {
+          right: 0;
+        }
+      }
+
+      .suggestions {
+        right: 0px;
+        left: auto;
+      }
+    }
+
     .left-logo-part {
       width: 100%;
 
@@ -240,20 +254,6 @@ $navbar-horizontal-padding = 1.5rem;
         width: auto;
         display: inline-block;
         border-right: none;
-      }
-
-      .egg-search-box {
-        right: 0;
-        left: auto;
-
-        input {
-          left: auto;
-          right: 0;
-
-          &:focus {
-            right: 0;
-          }
-        }
       }
     }
 
