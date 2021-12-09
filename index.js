@@ -1,4 +1,6 @@
 const container = require('markdown-it-container');
+const fs = require('fs');
+const { path } = require('@vuepress/shared-utils');
 
 // Theme API.
 module.exports = () => {
@@ -39,6 +41,12 @@ module.exports = () => {
       [ 'container', { type: 'tip', defaultTitle: { '/zh/': '提示' } }],
       [ 'container', { type: 'warning', defaultTitle: { '/zh/': '注意' } }],
       [ 'container', { type: 'danger', defaultTitle: { '/zh/': '警告' } }],
+      [
+        'fulltext-search',
+        {
+          hooks: fs.readFileSync(path.resolve(__dirname, './plugins/fullsearch/hooks.js')),
+        }
+      ],
     ],
   };
 };

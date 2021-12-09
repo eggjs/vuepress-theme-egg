@@ -12,7 +12,7 @@
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate"
   },
-  "repositoryUrl":"git@github.com:eggjs/vuepress-theme-egg.git",
+  "repositoryUrl": "git@github.com:eggjs/vuepress-theme-egg.git",
   "keywords": [
     "Egg.js",
     "Egg"
@@ -26,7 +26,8 @@
   "dependencies": {
     "@vuepress/plugin-back-to-top": "^1.7.1",
     "@vuepress/plugin-medium-zoom": "^1.7.1",
-    "urllib": "^2.33.3"
+    "urllib": "^2.33.3",
+    "vuepress-plugin-fulltext-search": "^2.2.1"
   },
   "devDependencies": {
     "all-contributors-cli": "^6.4.0",
