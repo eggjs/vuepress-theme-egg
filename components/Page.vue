@@ -140,7 +140,7 @@
         return (
           base.replace(endingSlashRE, "") +
           // change to `/edit/${docsBranch}` if want to goto edit page.
-          `/blob/${docsBranch}` +
+          `/edit/${docsBranch}` +
           (docsDir ? "/" + docsDir.replace(endingSlashRE, "") : "") +
           path
         );
